@@ -5,9 +5,11 @@ import Movies from "./components/Movies";
 import Navbar from "./components/Navbar";
 import WatchList from "./components/WatchList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
-
+  
   let[watchlist, SetWatchList] = useState([])
 
   let handleAddToWatchlist = (movieObj) => {
@@ -41,7 +43,9 @@ function App() {
 />
 
       </Routes>
+      <Analytics />
     </BrowserRouter>
+    
   );
 }
 
